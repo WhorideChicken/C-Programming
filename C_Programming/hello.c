@@ -3,10 +3,12 @@
 void Cesius();
 void LoopExample();
 void LoopExampleSecond();
+void LoopExampThird();
+
 
 int main()
 {
-	LoopExampleSecond();
+	LoopExampThird();
 	return 0;
 }
 
@@ -58,7 +60,7 @@ void LoopExampleSecond()
 	int count;
 	printf("숫자를 입력하시오 : ");
 	scanf_s("%d", &count);
-	int temp = count-1;
+	int temp = count - 1;
 
 	for (int i = 0; i < count; i++)
 	{
@@ -70,6 +72,26 @@ void LoopExampleSecond()
 				printf("*");
 		}
 		temp--;
+		printf("\n");
+	}
+
+}
+
+
+//TODO : 역피라미드
+void LoopExampThird()
+{
+	int count;
+	printf("숫자를 입력하시오 : ");
+	scanf_s("%d", &count);
+	int temp = count - 1;
+
+	for (int i = 0; i < count; i++)
+	{
+		for (int j = count; j > 0; j--)
+		{
+			printf("*");
+		}
 		printf("\n");
 	}
 
