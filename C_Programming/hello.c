@@ -2,10 +2,11 @@
 
 void Cesius();
 void LoopExample();
+void LoopExampleSecond();
 
 int main()
 {
-	LoopExample();
+	LoopExampleSecond();
 	return 0;
 }
 
@@ -28,6 +29,9 @@ void Cesius()
 }
 
 
+//for(;;) -> (조건문) 에서 조건문이 없으면 항상 참이라 인식 되기 때문에 무한 루프
+//탈출 하려면 중간 조건에 break 호출
+//특정 조건을 통과하려면 continue
 void LoopExample()
 {
 	int subject, score;
@@ -44,5 +48,29 @@ void LoopExample()
 		sum += score;
 	}
 
-	printf("모든 과목의 평균은 : %.2f", sum/subject);
+	printf("모든 과목의 평균은 : %.2f", sum / subject);
+}
+
+//N 줄인 삼각형을 출력한다.
+//	scanf_s(" : %d", &count); 처럼 형식 지정자 앞에 :를 넣으면 오류 발생
+void LoopExampleSecond()
+{
+	int count;
+	printf("숫자를 입력하시오 : ");
+	scanf_s("%d", &count);
+	int temp = count-1;
+
+	for (int i = 0; i < count; i++)
+	{
+		for (int j = 0; j < i + count; j++)
+		{
+			if (j < temp)
+				printf(" ");
+			else
+				printf("*");
+		}
+		temp--;
+		printf("\n");
+	}
+
 }
