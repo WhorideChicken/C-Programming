@@ -9,6 +9,12 @@ int main()
 }
 
 
+//float : %f
+//int : %d
+//short : %hd
+//long : %ld
+//double : %lf
+//char : %c
 void Cesius()
 {
 	double celsius;
