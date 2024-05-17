@@ -6,9 +6,11 @@ void LoopExampleSecond();
 void LoopExampThird();
 void LoopExampleFourth();
 void LoopFibonacci();
+void LoopFactorial();
+void LoopOptional();
 int main()
 {
-	LoopFibonacci();
+	LoopOptional();
 	return 0;
 }
 
@@ -127,6 +129,42 @@ void LoopFibonacci()
 	}
 
 	printf("%d", sum);
-
 }
 
+//n을 입력받은 후 n까지의 곱셈
+void LoopFactorial()
+{
+	int num;
+	int sum = 1;
+
+	printf("숫자를 입력하시오 : ");
+	scanf_s("%d", &num);
+
+	for (int i = num; i > 0; i--)
+	{
+		sum *= i;
+	}
+
+	printf("sum = %d", sum);
+}
+
+//다음 식을 만족하는 자연수 a,b,c 의 개수를 구하여라
+//a + b + c = 2000
+//a ＞ b > c, a,b,c 는 모두 자연수(양의 정수)
+void LoopOptional()
+{
+	int count = 0;
+	for (int i = 1; i < 2000; i++)
+	{
+		for (int j = 1; j < 2000 - i; j++)
+		{
+			int c = 2000 - i - j;
+			if (i > j && j > c && c > 0)
+			{
+				count++;
+			}
+		}
+	}
+	printf("만족하는 자연수 a, b, c 의 개수 = %d\n", count);
+
+}
