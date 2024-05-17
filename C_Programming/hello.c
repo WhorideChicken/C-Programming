@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <math.h>
+#include <stdbool.h>
 
 void Cesius();
 void LoopExample();
@@ -8,9 +10,12 @@ void LoopExampleFourth();
 void LoopFibonacci();
 void LoopFactorial();
 void LoopOptional();
+void Factorization();
+bool IsPrime(int num);
+
 int main()
 {
-	LoopOptional();
+	Factorization();
 	return 0;
 }
 
@@ -166,5 +171,60 @@ void LoopOptional()
 		}
 	}
 	printf("만족하는 자연수 a, b, c 의 개수 = %d\n", count);
+}
 
+
+//#include <math.h> : 제곱근 사용을 위해
+//#include <stdbool.h> : bool 사용을 위해
+
+void Factorization()
+{
+	int num;
+	printf("숫자를 입력하세요 : ");
+	scanf_s("%d", &num);
+
+	if (IsPrime(num))
+	{
+		printf("%d  *  %d\n", 1, num);
+		return;
+	}
+
+	while (num % 2==0)
+	{
+		printf("%d ", 2);
+		num /= 2;
+	}
+
+	//2는 소수이므로 2칸씩 이동
+	for (int i = 3; i * i <= num; i += 2)
+	{
+		while (num % i==0)
+		{
+			printf("%d ", i);
+			num /= i;
+		}
+	}
+}
+
+// num이 제곱근 이후 다른 수로 나눠 떨어진다면 그 수는 num의 약수입니다.
+// 이는 곧 '1'과 자신이외의 약수가 존재한다는 것이며, 이는 num이 소수가 아님을 의미합니다..
+bool IsPrime(int num)
+{
+	if (num <= 1)
+		return false;
+
+	if (num == 2)
+		return true;
+
+	if (num % 2 == 0)
+		return false;
+
+	//짝수를 뛰어넘기 위해
+	for (int i = 3; i <= sqrt(num); i+=2)
+	{
+		if (num % i == 0)
+			return false;
+	}
+
+	return true;
 }
