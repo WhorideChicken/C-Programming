@@ -84,14 +84,17 @@ void LoopExampThird()
 	int count;
 	printf("숫자를 입력하시오 : ");
 	scanf_s("%d", &count);
-	int temp = count - 1;
-
+	int temp = 0;
 	for (int i = 0; i < count; i++)
 	{
-		for (int j = count; j > 0; j--)
+		for (int j = 0; j < (count+2)-temp; ++j)
 		{
-			printf("*");
+			if (j < temp)
+				printf(" ");
+			else
+				printf("*");
 		}
+		temp++;
 		printf("\n");
 	}
 
