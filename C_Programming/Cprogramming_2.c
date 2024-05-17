@@ -37,12 +37,6 @@ f 가 달러 단위의 화폐 액수라고할 때 센트 단위만 추출해내는 경우라고 생각하면 된�
 
 void TypeCastExample();
 
-int main()
-{
-	TypeCastExample();
-	return 0;
-}
-
 void TypeCastExample()
 {
 	float f = 0.0f;
