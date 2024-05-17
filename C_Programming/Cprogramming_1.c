@@ -13,12 +13,6 @@ void LoopOptional();
 void Factorization();
 bool IsPrime(int num);
 
-int main()
-{
-	Factorization();
-	return 0;
-}
-
 
 //float : %f
 //int : %d
@@ -113,7 +107,6 @@ void LoopExampleFourth()
 
 	printf("sum %d", sum);
 }
-
 //1000000 이하의 피보나치 수열 
 //( N 번째 항이 N - 1 번째 항과 N - 2 번째 항으로 표현되는 수열, 시작은 1,1,2,3,5,8,...) 의 짝수 항들의 합을 구한다
 void LoopFibonacci()
@@ -135,7 +128,6 @@ void LoopFibonacci()
 
 	printf("%d", sum);
 }
-
 //n을 입력받은 후 n까지의 곱셈
 void LoopFactorial()
 {
@@ -152,7 +144,6 @@ void LoopFactorial()
 
 	printf("sum = %d", sum);
 }
-
 //다음 식을 만족하는 자연수 a,b,c 의 개수를 구하여라
 //a + b + c = 2000
 //a ＞ b > c, a,b,c 는 모두 자연수(양의 정수)
@@ -172,11 +163,8 @@ void LoopOptional()
 	}
 	printf("만족하는 자연수 a, b, c 의 개수 = %d\n", count);
 }
-
-
 //#include <math.h> : 제곱근 사용을 위해
 //#include <stdbool.h> : bool 사용을 위해
-
 void Factorization()
 {
 	int num;
@@ -205,7 +193,6 @@ void Factorization()
 		}
 	}
 }
-
 // num이 제곱근 이후 다른 수로 나눠 떨어진다면 그 수는 num의 약수입니다.
 // 이는 곧 '1'과 자신이외의 약수가 존재한다는 것이며, 이는 num이 소수가 아님을 의미합니다..
 bool IsPrime(int num)
