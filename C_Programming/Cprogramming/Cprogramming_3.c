@@ -15,10 +15,11 @@
 */
 
 void Score();
+void ScoreSecond();
 
 int main()
 {
-	Score();
+	ScoreSecond();
 	return 0;
 }
 
@@ -50,6 +51,27 @@ void Score()
 	{
 		printf("%d -- %d\n", i, score[i]);
 	}
-
 }
+
+void ScoreSecond()
+{
+	int score[5];
+	for (int i = 0; i < sizeof(score) / sizeof(int); i++)
+	{
+		printf("%d의 성적을 입력해 주세요 : ", i + 1);
+		scanf_s("%d", &score[i]);
+	}
+
+
+	for (int i = 0; i < sizeof(score) / sizeof(int); i++)
+	{
+		printf("%d 번째 학생 점수 :", i + 1);
+		for (int j = 0; j < score[i]; j++)
+		{
+			printf("-");
+		}
+		printf("\n");
+	}
+}
+
 
