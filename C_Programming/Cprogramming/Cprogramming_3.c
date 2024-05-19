@@ -17,12 +17,6 @@
 void Score();
 void ScoreSecond();
 
-int main()
-{
-	ScoreSecond();
-	return 0;
-}
-
 //int는 4바이트이므로 4로 나눠준다.
 void Score()
 {
