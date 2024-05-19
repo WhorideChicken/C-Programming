@@ -19,12 +19,6 @@
 #include <stdio.h>
 void StudentScore();
 
-int main()
-{
-	StudentScore();
-	return 0;
-}
-
 void StudentScore()
 {
 	int scoreArray[3][3];
