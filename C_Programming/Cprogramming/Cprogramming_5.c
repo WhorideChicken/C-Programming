@@ -53,9 +53,3 @@ void PointExample()
 	printf("%d \n", a);
 }
 
-
-int main()
-{
-	PointExample();
-	return 0;
-}

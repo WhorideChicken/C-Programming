@@ -116,3 +116,7 @@ C_Programming/Cprogramming/x64/Debug/Cprogramming.tlog/link.secondary.1.tlog
 C_Programming/Cprogramming/x64/Debug/Cprogramming.tlog/link.write.1.tlog
 C_Programming/Cprogramming/x64/Debug/vcpkg.applocal.log
 /C_Programming/.vs
+*.vcxproj
+*.filters
+C_Programming/Cprogramming/Cprogramming.vcxproj
+C_Programming/Cprogramming/Cprogramming.vcxproj.filters
