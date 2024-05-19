@@ -15,7 +15,7 @@
 */
 
 void Score();
-void Sorting(int scoreArray[]);
+
 int main()
 {
 	Score();
@@ -32,10 +32,24 @@ void Score()
 		scanf_s("%d", &score[i]);
 	}
 
-	Sorting(score);
+	//sorting
+	for (int i = 0; i < (sizeof(score) / sizeof(int) - 1); i++)
+	{
+		for (int j = 0; j < (sizeof(score) / sizeof(int) - 1); j++)
+		{
+			int temp = score[j + 1];
+			if (score[j] < temp)
+			{
+				score[j + 1] = score[j];
+				score[j] = temp;
+			}
+		}
+	}
+
+	for (int i = 0; i < sizeof(score) / sizeof(int); i++)
+	{
+		printf("%d -- %d\n", i, score[i]);
+	}
+
 }
 
-void Sorting(int scoreArray[])
-{
-
-}
