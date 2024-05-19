@@ -15,6 +15,7 @@
 */
 
 void Score();
+void Sorting(int scoreArray[]);
 int main()
 {
 	Score();
