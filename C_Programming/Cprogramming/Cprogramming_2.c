@@ -1,38 +1,38 @@
-#include <stdio.h>
-/*switch¹®ÀÇ inputµÇ´Â º¯¼ö´Â ¹Ýµå½Ã Á¤¼ö µ¥ÀÌÅÍ¸¦ º¸°üÇÏ´Â º¯¼ö¿©¾ßÇÑ´Ù.
+ï»¿#include <stdio.h>
+/*switchë¬¸ì˜ inputë˜ëŠ” ë³€ìˆ˜ëŠ” ë°˜ë“œì‹œ ì •ìˆ˜ ë°ì´í„°ë¥¼ ë³´ê´€í•˜ëŠ” ë³€ìˆ˜ì—¬ì•¼í•œë‹¤.
 char, short, int, long
 
-switch¹®°ú if¹®À» ³ª´² »ç¿ëÇÏ´Â ÀÌÀ¯
-if¹®Àº Á¶°Ç¹®ÀýÀÌ ÀÖÀ¸¸é ÇØ´ç Á¶°ÇÀÌ µÉ ¶§±îÁö ¸ðµç Á¶°Ç¹®À» ºñ±³ÇÑ´Ù
-switch¹® °æ¿ì ³»ºÎÀûÀ¸·Î jump tableÀ» »ý¼ºÇÕ´Ï´Ù.
-jump tableÀº ÇÁ·Î±×·¥ ÃÊ±â¿¡ ÀÛ¼º µÇ±â ¶§¹®¿¡ switch¹®ÀÌ ½ÇÇàµÇ±â Àü¿¡ ÀÛ¼ºµÈ´Ù.
-¶§¹®¿¡ caseµÚ¿¡ ¹¹°¡ µé¾î¿ÃÁö ¸ð¸£´Â º¯¼ö°¡ ¾Æ´Ñ °ªÀ¸·Î ¼±¾ðÇØ¾ßÇÏ´Â°ÍÀÌ°í
-if¹®°ú ´Þ¸® input °ªÀÌ µé¾î¿À¸é ¹Ì¸® ÀÛ¼º µÈ jump tableÀÇ ÇØ´ç À§Ä¡·Î ÀÌµ¿ÇÏ±â ¶§¹®¿¡
-´Ù¸¥ Á¶°Ç¹®À» ºñ±³ÇÏÁö ¾Ê°í ¹Ù·Î ½ÇÇà ÇÕ´Ï´Ù.
-µû¶ó¼­, switch ¹®À» ÀÌ¿ëÇÏ¸é case ¿¡ µû¶ó CMP ¿¬»êÀÌ ´Ã¾î³ª´Â °ÍÀÌ ¾Æ´Ï¶ó 
-jump table ÀÇ Å©±â¸¸ Ä¿Áú »Ó ¼º´É¿¡ ÀÖ¾î¼­´Â ÀüÇô ¿µÇâÀ» ¹ÞÁö ¾Ê°Ô µË´Ï´Ù.
+switchë¬¸ê³¼ ifë¬¸ì„ ë‚˜ëˆ  ì‚¬ìš©í•˜ëŠ” ì´ìœ 
+ifë¬¸ì€ ì¡°ê±´ë¬¸ì ˆì´ ìžˆìœ¼ë©´ í•´ë‹¹ ì¡°ê±´ì´ ë  ë•Œê¹Œì§€ ëª¨ë“  ì¡°ê±´ë¬¸ì„ ë¹„êµí•œë‹¤
+switchë¬¸ ê²½ìš° ë‚´ë¶€ì ìœ¼ë¡œ jump tableì„ ìƒì„±í•©ë‹ˆë‹¤.
+jump tableì€ í”„ë¡œê·¸ëž¨ ì´ˆê¸°ì— ìž‘ì„± ë˜ê¸° ë•Œë¬¸ì— switchë¬¸ì´ ì‹¤í–‰ë˜ê¸° ì „ì— ìž‘ì„±ëœë‹¤.
+ë•Œë¬¸ì— caseë’¤ì— ë­ê°€ ë“¤ì–´ì˜¬ì§€ ëª¨ë¥´ëŠ” ë³€ìˆ˜ê°€ ì•„ë‹Œ ê°’ìœ¼ë¡œ ì„ ì–¸í•´ì•¼í•˜ëŠ”ê²ƒì´ê³ 
+ifë¬¸ê³¼ ë‹¬ë¦¬ input ê°’ì´ ë“¤ì–´ì˜¤ë©´ ë¯¸ë¦¬ ìž‘ì„± ëœ jump tableì˜ í•´ë‹¹ ìœ„ì¹˜ë¡œ ì´ë™í•˜ê¸° ë•Œë¬¸ì—
+ë‹¤ë¥¸ ì¡°ê±´ë¬¸ì„ ë¹„êµí•˜ì§€ ì•Šê³  ë°”ë¡œ ì‹¤í–‰ í•©ë‹ˆë‹¤.
+ë”°ë¼ì„œ, switch ë¬¸ì„ ì´ìš©í•˜ë©´ case ì— ë”°ë¼ CMP ì—°ì‚°ì´ ëŠ˜ì–´ë‚˜ëŠ” ê²ƒì´ ì•„ë‹ˆë¼ 
+jump table ì˜ í¬ê¸°ë§Œ ì»¤ì§ˆ ë¿ ì„±ëŠ¥ì— ìžˆì–´ì„œëŠ” ì „í˜€ ì˜í–¥ì„ ë°›ì§€ ì•Šê²Œ ë©ë‹ˆë‹¤.
 
-´Ü switch¹®ÀÇ È¿À²À» À§ÇØ¼­ 
- case ÀÇ '°ª' µéÀÇ Å©±â°¡ ±×´ÙÁö Å©Áö ¾Ê¾Æ¾ß ÇÏ°í, '°ª' µéÀÌ ¼øÂ÷ÀûÀ¸·Î Á¤·ÄµÇ¾î ÀÖ°í, 
-±× '°ª' ³¢¸®ÀÇ Â÷ÀÌ°¡ Å©Áö ¾Ê´Ù¸éÃÖ°í·Î È¿À²ÀûÀÎ switch ¹®À» ÀÌ¿ëÇÒ ¼ö ÀÖ°Ô µË´Ï´Ù.
+ë‹¨ switchë¬¸ì˜ íš¨ìœ¨ì„ ìœ„í•´ì„œ 
+ case ì˜ 'ê°’' ë“¤ì˜ í¬ê¸°ê°€ ê·¸ë‹¤ì§€ í¬ì§€ ì•Šì•„ì•¼ í•˜ê³ , 'ê°’' ë“¤ì´ ìˆœì°¨ì ìœ¼ë¡œ ì •ë ¬ë˜ì–´ ìžˆê³ , 
+ê·¸ 'ê°’' ë¼ë¦¬ì˜ ì°¨ì´ê°€ í¬ì§€ ì•Šë‹¤ë©´ìµœê³ ë¡œ íš¨ìœ¨ì ì¸ switch ë¬¸ì„ ì´ìš©í•  ìˆ˜ ìžˆê²Œ ë©ë‹ˆë‹¤.
 
 
-¹®Á¦ 2
-¾Õ¼­, switch ¹®ÀÌ ³»ºÎÀûÀ¸·Î Ã³¸® µÇ´Â ºÎºÐ¿¡¼­
-case 1: ~ case 10: ÀÏ ¶§ ¸¸ »ý°¢ÇÏ¿´´Âµ¥, 
-¸¸¾à case 1:, case 3:, case 4:, case 10: °ú °°ÀÌ ºÒ±ÔÄ¢ ÀûÀ¸·Î switch ¹®ÀÌ Àû¿ëµÈ´Ù¸é 
-ÄÄÇ»ÅÍ´Â jump table ¸¦ ¾î¶»°Ô ÀÛ¼ºÇÒ±î¿ä (³­ÀÌµµ : õÌß¾)
+ë¬¸ì œ 2
+ì•žì„œ, switch ë¬¸ì´ ë‚´ë¶€ì ìœ¼ë¡œ ì²˜ë¦¬ ë˜ëŠ” ë¶€ë¶„ì—ì„œ
+case 1: ~ case 10: ì¼ ë•Œ ë§Œ ìƒê°í•˜ì˜€ëŠ”ë°, 
+ë§Œì•½ case 1:, case 3:, case 4:, case 10: ê³¼ ê°™ì´ ë¶ˆê·œì¹™ ì ìœ¼ë¡œ switch ë¬¸ì´ ì ìš©ëœë‹¤ë©´ 
+ì»´í“¨í„°ëŠ” jump table ë¥¼ ì–´ë–»ê²Œ ìž‘ì„±í• ê¹Œìš” (ë‚œì´ë„ : æœ€ä¸Š)
 
-ÄÄÆÄÀÏ·¯ ÃÖÀûÈ­¿¡ µû¶ó ´Ù¸£Áö¸¸ ÀûÀýÈ÷ if-else ¿Í index ±â¹Ý jmp ¸¦ ¼¯¾î 
-ºÒ±ÔÄ¢ÇÑ °ª¿¡ ´ëÇØ¼± ³»ºÎÀûÀ¸·Î ÀÌÁø Å½»ö, ÇØ½Ã Å×ÀÌºí, if-else¹®À» È¥ÇÕÇØ¿© ÃÖÀûÀÇ ºÐ±â Ã³¸®¸¦ ÇÑ´Ù.
+ì»´íŒŒì¼ëŸ¬ ìµœì í™”ì— ë”°ë¼ ë‹¤ë¥´ì§€ë§Œ ì ì ˆížˆ if-else ì™€ index ê¸°ë°˜ jmp ë¥¼ ì„žì–´ 
+ë¶ˆê·œì¹™í•œ ê°’ì— ëŒ€í•´ì„  ë‚´ë¶€ì ìœ¼ë¡œ ì´ì§„ íƒìƒ‰, í•´ì‹œ í…Œì´ë¸”, if-elseë¬¸ì„ í˜¼í•©í•´ì—¬ ìµœì ì˜ ë¶„ê¸° ì²˜ë¦¬ë¥¼ í•œë‹¤.
 */
 
-/*Çüº¯È¯
-ÀÓÀÇÀÇ ½Ç¼ö¿¡¼­ ¼Ò¼öÁ¡ ÀÌÇÏ µÎÀÚ¸®¼ö¸¸ ÃßÃâÇÏ¿© Á¤¼öÇü º¯¼ö¿¡ ´ëÀÔÇÏ¶ó. 
-¿¹¸¦µé¾î »ç¿ëÀÚ·ÎºÎÅÍ ÀÔ·Â¹ÞÀº ½Ç¼ö f °¡ 
-12.3456ÀÌ¶ó¸é 34¸¸ ÃßÃâÇÑ´Ù. ÀÌ¶§ ¹Ý¿Ã¸²Àº °í·ÁÇÏÁö ¾Ê¾Æµµ »ó°ü¾ø´Ù. 
-f °¡ ´Þ·¯ ´ÜÀ§ÀÇ È­Æó ¾×¼ö¶ó°íÇÒ ¶§ ¼¾Æ® ´ÜÀ§¸¸ ÃßÃâÇØ³»´Â °æ¿ì¶ó°í »ý°¢ÇÏ¸é µÈ´Ù. 
-´ÙÀ½ ???? ÀÚ¸®¿¡ ÀûÇÕÇÑ ¿¬»ê½ÄÀ» ÀÛ¼ºÇÏ´Â ¹®Á¦ÀÌ´Ù.
+/*í˜•ë³€í™˜
+ìž„ì˜ì˜ ì‹¤ìˆ˜ì—ì„œ ì†Œìˆ˜ì  ì´í•˜ ë‘ìžë¦¬ìˆ˜ë§Œ ì¶”ì¶œí•˜ì—¬ ì •ìˆ˜í˜• ë³€ìˆ˜ì— ëŒ€ìž…í•˜ë¼. 
+ì˜ˆë¥¼ë“¤ì–´ ì‚¬ìš©ìžë¡œë¶€í„° ìž…ë ¥ë°›ì€ ì‹¤ìˆ˜ f ê°€ 
+12.3456ì´ë¼ë©´ 34ë§Œ ì¶”ì¶œí•œë‹¤. ì´ë•Œ ë°˜ì˜¬ë¦¼ì€ ê³ ë ¤í•˜ì§€ ì•Šì•„ë„ ìƒê´€ì—†ë‹¤. 
+f ê°€ ë‹¬ëŸ¬ ë‹¨ìœ„ì˜ í™”í ì•¡ìˆ˜ë¼ê³ í•  ë•Œ ì„¼íŠ¸ ë‹¨ìœ„ë§Œ ì¶”ì¶œí•´ë‚´ëŠ” ê²½ìš°ë¼ê³  ìƒê°í•˜ë©´ ëœë‹¤. 
+ë‹¤ìŒ ???? ìžë¦¬ì— ì í•©í•œ ì—°ì‚°ì‹ì„ ìž‘ì„±í•˜ëŠ” ë¬¸ì œì´ë‹¤.
 */
 
 void TypeCastExample();
@@ -42,7 +42,7 @@ void TypeCastExample()
 	float f = 0.0f;
 	int i;
 	int temp = 0;
-	printf("½Ç¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ì‹¤ìˆ˜ë¥¼ ìž…ë ¥í•˜ì‹œì˜¤ : ");
 	scanf_s("%f", &f);
 	temp = (int)f * 100;
 	i = (int)(f * 100);

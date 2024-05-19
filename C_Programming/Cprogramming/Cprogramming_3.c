@@ -1,29 +1,29 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
-//¹è¿­ ÀÚ·áÇü º¯¼ö¸í[»çÀÌÁî]
-//C¾ð¾î¿¡¼­´Â ¹è¿­ÀÇ Å©±â¸¦ º¯¼ö¸¦ ÅëÇØ Á¤ÀÇÇÒ ¼ö ¾ø°Ô ±ÔÁ¤ µÇ¾î ÀÖ´Ù.
-//»ó¼ö : const : Ã³À½ Á¤ÀÇ½Ã ±× °ªÀÌ ¹Ù·Î ÁÖ¾îÁö°í ¿µ¿øÈ÷ ¹Ù²îÁö ¾ÊÀ½
+//ë°°ì—´ ìžë£Œí˜• ë³€ìˆ˜ëª…[ì‚¬ì´ì¦ˆ]
+//Cì–¸ì–´ì—ì„œëŠ” ë°°ì—´ì˜ í¬ê¸°ë¥¼ ë³€ìˆ˜ë¥¼ í†µí•´ ì •ì˜í•  ìˆ˜ ì—†ê²Œ ê·œì • ë˜ì–´ ìžˆë‹¤.
+//ìƒìˆ˜ : const : ì²˜ìŒ ì •ì˜ì‹œ ê·¸ ê°’ì´ ë°”ë¡œ ì£¼ì–´ì§€ê³  ì˜ì›ížˆ ë°”ë€Œì§€ ì•ŠìŒ
 
 /*
-* »ý°¢ÇØ º¼ ¹®Á¦
-¹®Á¦ 1
-À§ ÀÔ·Â¹Þ´Â ÇÐ»ýµéÀÇ ¼ºÀûÀ» ³ôÀº ¼øÀ¸·Î Á¤·ÄÇÏ´Â ÇÁ·Î±×·¥À» ¸¸µé¾î º¸¼¼¿ä.
-5°³
+* ìƒê°í•´ ë³¼ ë¬¸ì œ
+ë¬¸ì œ 1
+ìœ„ ìž…ë ¥ë°›ëŠ” í•™ìƒë“¤ì˜ ì„±ì ì„ ë†’ì€ ìˆœìœ¼ë¡œ ì •ë ¬í•˜ëŠ” í”„ë¡œê·¸ëž¨ì„ ë§Œë“¤ì–´ ë³´ì„¸ìš”.
+5ê°œ
 
-¹®Á¦ 2
-ÀÔ·Â¹ÞÀº ÇÐ»ýµéÀÇ ¼ºÀûÀ» ¸·´ë ±×·¡ÇÁ·Î ³ªÅ¸³»´Â ÇÁ·Î±×·¥À» ¸¸µé¾î º¸¼¼¿ä.
+ë¬¸ì œ 2
+ìž…ë ¥ë°›ì€ í•™ìƒë“¤ì˜ ì„±ì ì„ ë§‰ëŒ€ ê·¸ëž˜í”„ë¡œ ë‚˜íƒ€ë‚´ëŠ” í”„ë¡œê·¸ëž¨ì„ ë§Œë“¤ì–´ ë³´ì„¸ìš”.
 */
 
 void Score();
 void ScoreSecond();
 
-//int´Â 4¹ÙÀÌÆ®ÀÌ¹Ç·Î 4·Î ³ª´²ÁØ´Ù.
+//intëŠ” 4ë°”ì´íŠ¸ì´ë¯€ë¡œ 4ë¡œ ë‚˜ëˆ ì¤€ë‹¤.
 void Score()
 {
 	int score[5];
 	for (int i = 0; i < sizeof(score)/sizeof(int); i++)
 	{
-		printf("%dÀÇ ¼ºÀûÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä : ", i + 1);
+		printf("%dì˜ ì„±ì ì„ ìž…ë ¥í•´ ì£¼ì„¸ìš” : ", i + 1);
 		scanf_s("%d", &score[i]);
 	}
 
@@ -52,14 +52,14 @@ void ScoreSecond()
 	int score[5];
 	for (int i = 0; i < sizeof(score) / sizeof(int); i++)
 	{
-		printf("%dÀÇ ¼ºÀûÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä : ", i + 1);
+		printf("%dì˜ ì„±ì ì„ ìž…ë ¥í•´ ì£¼ì„¸ìš” : ", i + 1);
 		scanf_s("%d", &score[i]);
 	}
 
 
 	for (int i = 0; i < sizeof(score) / sizeof(int); i++)
 	{
-		printf("%d ¹øÂ° ÇÐ»ý Á¡¼ö :", i + 1);
+		printf("%d ë²ˆì§¸ í•™ìƒ ì ìˆ˜ :", i + 1);
 		for (int j = 0; j < score[i]; j++)
 		{
 			printf("-");
