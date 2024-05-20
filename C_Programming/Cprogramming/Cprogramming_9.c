@@ -145,6 +145,12 @@ bool IsPrimeTwo(int value)
 예) factorize(10); 출력결과 : 2 × 5
 
 factorize(180); 출력결과 : 2 × 2 × 3 × 3 × 5
+
+1과 그 아래 값은 인수 분해 의미가 없기 떄문에 잘 못 된 표현으로 넘기고
+2로 나눠서 나머지가 0일 때 까지 나누며 2를 출력하게 한다
+그뒤 3부터 시작해 홀수(2로 이미 다 나눴으니) 남은 temp값의 제곱근만큼(인수가 대칭을 이루기 때문)
+2씩 건너뛰며 i만큼 나눠 준다.
+//
 */
 
 void factorize(int value)
@@ -159,15 +165,16 @@ void factorize(int value)
 	while (temp % 2 == 0)
 	{
 		temp /= 2;
-		printf("%d X ", temp);
+		printf("%d  ", 2);
 	}
 
+	//2로 나눈 과정을 이미 거쳤기 때문
 	for (int i = 3; i <=sqrt(temp); i += 2)
 	{
 		while (temp % i == 0)
 		{
 			temp /= i;
-			printf("%d X ", temp);
+			printf("%d  ", i);
 		}
 	}
 
