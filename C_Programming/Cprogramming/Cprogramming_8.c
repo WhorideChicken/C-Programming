@@ -8,17 +8,11 @@
 * 
 */
 
-#include <stdio.h>
 void PointerExample();
 void DoublePointer();
 void ArrayPointrerExample();
 void ArrayPointrerExampleTwo();
 
-int main()
-{
-	ArrayPointrerExampleTwo();
-	return 0;
-}
 
 void PointerExample()
 {
@@ -166,8 +160,8 @@ void ArrayPointrerExampleTwo()
 	* 3이 아닌 다른 크기의 배열을 할당하면 오류가 발생합니다.
 	*/
 
-	int** parr = arr;
-	printf("%d\n", *(parr + 1));
+	//int** parr = arr;
+	//printf("%d\n", *(parr + 1));
 	/*
 	* 위의 코드에서는 무슨일을 한것일까요?
 	* parr에는 arr 주소값이 들어있기는 합니다
