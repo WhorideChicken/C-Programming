@@ -120,3 +120,4 @@ C_Programming/Cprogramming/x64/Debug/vcpkg.applocal.log
 *.filters
 C_Programming/Cprogramming/Cprogramming.vcxproj
 C_Programming/Cprogramming/Cprogramming.vcxproj.filters
+*.vsidx
