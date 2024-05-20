@@ -33,5 +33,11 @@
     <ClCompile Include="Cprogramming_6.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Cprogramming_7.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Cprogramming_8.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

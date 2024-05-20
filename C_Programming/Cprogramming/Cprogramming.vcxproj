@@ -133,6 +133,8 @@
     <ClCompile Include="Cprogramming_4.c" />
     <ClCompile Include="Cprogramming_5.c" />
     <ClCompile Include="Cprogramming_6.c" />
+    <ClCompile Include="Cprogramming_7.c" />
+    <ClCompile Include="Cprogramming_8.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
