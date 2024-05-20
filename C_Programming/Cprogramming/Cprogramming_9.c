@@ -32,7 +32,7 @@ int slave(int my_money) {
 	my_money += 10000;
 	return my_money;
 }
-int main()
+int mainTemp()
 {
 	/*slave함수의 my_money와 main 함수의 my_money는 완전히 다른 값으로 서로에게 영향을 줄 수 없다
 	slave 함수의 my_money는 main함수의 my_money와 가은 값을 가진 채로 초기화 된 메모리 상의 또 다른 변수 이기 때문이다.
