@@ -4,15 +4,9 @@
 * int, float, double과 같은 상수 변수와 같이 포인터에도 const를 붙일 수 있다.
 * '절대로 바뀌지 않을 것 같은 값에는 무조건 const 키워드를 붙여주는 습관'
 */
-#include <stdio.h>
 void ExampleOne();
 void ExampleTwo();
 
-int main()
-{
-
-	return 0;
-}
 
 void ExampleOne()
 {
