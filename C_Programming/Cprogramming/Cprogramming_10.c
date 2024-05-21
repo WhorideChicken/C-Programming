@@ -27,7 +27,7 @@ int add_number(int* parr)
 	}
 }
 
-int main()
+int mainTemp_func()
 {
 	//int i = 0;
 	//printf("%d\n", i);
