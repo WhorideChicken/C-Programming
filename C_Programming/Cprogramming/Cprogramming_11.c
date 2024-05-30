@@ -15,7 +15,7 @@
 int max(int a, int b);
 void Euclidean();
 void GetScoreAverage(int size);
-int GDC(int i, int j);
+int GCD(int i, int j);
 
 int main()
 {
@@ -92,6 +92,7 @@ void Euclidean()
 {
 	int numArry[4];
 
+	int total = 0;
 
 	for (int i = 0; i < sizeof(numArry)/sizeof(int); i++)
 	{
@@ -99,19 +100,23 @@ void Euclidean()
 		scanf_s("%d", &numArry[i]);
 	}
 
-	int value = GDC(numArry[0], numArry[1]);
+
+	int value = GCD(numArry[0], numArry[1]);
+	total = (numArry[0] * numArry[1]) / value;
 
 	for (int j = 2; j < sizeof(numArry) / sizeof(int); j++)
 	{
-		value = GDC(value, numArry[j]);
+		value = GCD(value, numArry[j]);
+		total = (total * numArry[j]) / GCD(total, numArry[j]);
 	}
 
 	printf("%d\n", value);
-	
+	printf("%d", total);
 }
 
 
-int GDC(int i, int j)
+
+int GCD(int i, int j)
 {
 	int a = j;
 	int b = i;
