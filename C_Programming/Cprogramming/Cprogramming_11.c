@@ -13,10 +13,13 @@
 #include <stdio.h>
 
 int max(int a, int b);
+void Euclidean();
 void GetScoreAverage(int size);
+int GDC(int i, int j);
+
 int main()
 {
-	GetScoreAverage(5);
+	Euclidean();
 	return 0;
 }
 
@@ -84,6 +87,51 @@ void GetScoreAverage(int size)
 유클리드 호제법이 무엇인지 모르신다면, 
 인터넷 검색을 활용하는 것을 추천합니다. (댓글을 달아도 돼요) (난이도 : 中上)
 */
+
+void Euclidean()
+{
+	int numArry[4];
+
+
+	for (int i = 0; i < sizeof(numArry)/sizeof(int); i++)
+	{
+		printf("num :");
+		scanf_s("%d", &numArry[i]);
+	}
+
+	int value = GDC(numArry[0], numArry[1]);
+
+	for (int j = 2; j < sizeof(numArry) / sizeof(int); j++)
+	{
+		value = GDC(value, numArry[j]);
+	}
+
+	printf("%d\n", value);
+	
+}
+
+
+int GDC(int i, int j)
+{
+	int a = j;
+	int b = i;
+	
+	if (i > j)
+	{
+		a = i;
+		b = j;
+	}
+
+	while (a % b != 0)
+	{
+		int temp = a % b;
+		a = b;
+		b = temp;
+	}
+
+	return b;
+}
+
 
 /* 문제 3
 * 자기 자신을 호출하는 함수를 이용해서 1 부터 특정한 수까지의 곱을 구하는 프로그램을 만들어보세요. (난이도 : 下)
