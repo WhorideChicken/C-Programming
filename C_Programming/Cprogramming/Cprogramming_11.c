@@ -60,6 +60,21 @@ void GetScoreAverage(int size)
 		arr[i] = (total/3);
 		totalAverage += arr[i];
 	}
+
+	totalAverage /= 5;
+
+	for (int k = 0; k < sizeof(arr) / sizeof(int); k++)
+	{
+		if (arr[k] >= totalAverage)
+		{
+			printf("%d 번째 학생은 합격입니다.\n", k + 1);
+		}
+		else 
+		{
+			printf("%d 번째 학생은 불합격입니다.\n", k + 1);
+		}
+	}
+
 }
 
 
