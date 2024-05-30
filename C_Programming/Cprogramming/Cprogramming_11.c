@@ -12,14 +12,16 @@
 */
 #include <stdio.h>
 
+
 int max(int a, int b);
 void Euclidean();
 void GetScoreAverage(int size);
 int GCD(int i, int j);
+void Recurcive(int total, int num);
 
 int main()
 {
-	Euclidean();
+	Recurcive(1, 10);
 	return 0;
 }
 
@@ -80,7 +82,6 @@ void GetScoreAverage(int size)
 
 }
 
-
 /*
 * 문제 2
 * 유클리도 호제법을 이용해서 N 개의 수들의 최대공약수를 구하는 함수를 만들어보세요. 
@@ -114,8 +115,6 @@ void Euclidean()
 	printf("%d", total);
 }
 
-
-
 int GCD(int i, int j)
 {
 	int a = j;
@@ -142,6 +141,18 @@ int GCD(int i, int j)
 * 자기 자신을 호출하는 함수를 이용해서 1 부터 특정한 수까지의 곱을 구하는 프로그램을 만들어보세요. (난이도 : 下)
 */
 
+void Recurcive(int total, int num)
+{
+	if (num == 0)
+	{
+		printf("%d", total);
+		return;
+	}
+
+	total *= num;
+	num--;
+	Recurcive(total, num);
+}
 
 /* 문제 4
 * 계산기를 만들어보세요. 사용자가 1 을 누르면 +, 2 를 누르면 - 와 같은 방식으로 
