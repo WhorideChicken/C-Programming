@@ -11,17 +11,18 @@
 * (함수의 리턴형)(*포인터 이름)(매개변수들...)
 */
 #include <stdio.h>
-
+#include <math.h>
 
 int max(int a, int b);
 void Euclidean();
 void GetScoreAverage(int size);
 int GCD(int i, int j);
 void Recurcive(int total, int num);
+void Eratosthenes();
 
 int main()
 {
-	Recurcive(1, 10);
+	Eratosthenes();
 	return 0;
 }
 
@@ -154,22 +155,39 @@ void Recurcive(int total, int num)
 	Recurcive(total, num);
 }
 
-/* 문제 4
-* 계산기를 만들어보세요. 사용자가 1 을 누르면 +, 2 를 누르면 - 와 같은 방식으로 
-해서 만들면 됩니다. 
-물론 이전의 계산 결과는 계속 누적되어야 하고, 
-지우기 기능도 있어야 합니다. (물론 하나의 함수에 구현하는 것이 
-아니라 여러개의 함수로 분할해서 만들어야겠죠?) (난이도 : 中)
-*/
-
-
-/* 문제 5
-* N 진법에서 M 진법으로 변환하는 프로그램을 만들어보세요. (난이도 : 中)
-*/
-
 /* 문제 6
 * 에라토스테네스의 체를 이용해서 1 부터 N 까지의 소수를 구하는 프로그램을 만들어보세요. (난이도 : 中)
 */
+
+void Eratosthenes()
+{
+	int num;
+	printf("input num : ");
+	scanf_s("%d", &num);
+
+	int arr[100];
+	for (int i = 0; i < sizeof(arr) / sizeof(int); i++)
+	{
+		if (i < num)
+			arr[i] = i;
+		else
+			arr[i] = 0;
+	}
+	
+	for (int i = 2; i <=sqrt(num); i++)
+	{
+		for (int j = i+i; j <= num; j+=i) 
+		{
+			arr[j] = 0;
+		}
+	}
+
+	for (int k = 2; k <= num; k++)
+	{
+		if(arr[k] != 0)
+			printf("%d\n", arr[k]);
+	}
+}
 
 /*문제 7
 * 1000 자리의 수들의 덧셈, 뺄셈, 곱셈,
